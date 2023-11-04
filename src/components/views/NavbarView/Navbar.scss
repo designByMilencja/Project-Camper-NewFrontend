@@ -1,0 +1,10 @@
+nav {
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a.logo {
+    padding: 0;
+    background-color: transparent;
+  }
+}
