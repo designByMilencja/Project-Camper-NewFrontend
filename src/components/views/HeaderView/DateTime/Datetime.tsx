@@ -9,7 +9,7 @@ export const Datetime = () => {
         }, 1000)
     })
     return (
-        <div className="data">
+        <div className="date">
             <p>Aktualne miejsce: Teneryfa</p>
             <p> {datetime.toLocaleString()}</p>
         </div>
