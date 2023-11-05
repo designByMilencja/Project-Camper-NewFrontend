@@ -1,0 +1,13 @@
+.chartPicture {
+    height: 20vh;
+    img {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        height: 90%;
+    }
+}
+@media (min-width: 768px) {
+    .chartPicture {
+        height: 30vh;
+    }
+}
