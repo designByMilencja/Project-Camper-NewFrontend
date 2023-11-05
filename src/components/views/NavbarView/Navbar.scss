@@ -1,3 +1,5 @@
+@import "../../../styles/colors";
+
 nav {
   padding: 1rem 4rem;
   display: flex;
@@ -6,5 +8,8 @@ nav {
   a.logo {
     padding: 0;
     background-color: transparent;
+  }
+  .menu:hover {
+    border: 3px solid $border-color;
   }
 }
