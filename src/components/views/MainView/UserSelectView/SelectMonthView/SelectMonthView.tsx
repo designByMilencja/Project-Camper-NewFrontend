@@ -19,12 +19,13 @@ export const SelectMonthView = () => {
     const urlMonth = `/month/${month}`;
     if (isLoadingMonthData) return <LoadingView/>
     return <>
-        <form onSubmit={sendForm} className="select-form">
-            <select className="month" name="month" value={month} onChange={changeMonth}>
-                <option value=""> - miesiąc -</option>
+        <form onSubmit={sendForm} className="form">
+            <h3>Wybierz miesiąc</h3>
+            <select name="month" value={month} onChange={changeMonth}>
+                <option value=""></option>
                 {monthsData ? monthsData.map((month: MonthEntity) => <option key={month.id} value={month.name}>{month.name}</option>) : []}
             </select>
-            <Button text="sprawdź" to={urlMonth} name="select"></Button>
+            <Button text="Sprawdź" to={urlMonth} name="btn"></Button>
         </form>
     </>;
 }
