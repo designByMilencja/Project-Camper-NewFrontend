@@ -1,13 +1,13 @@
 import React, {useMemo, useState} from "react";
 import {LoginEntity} from "types";
 import {apiUrl} from "../../../../config/api";
-import "../../AddView/AddView.scss";
 import {useForm} from "../../../../hooks/useForm";
 import {useNavigate} from "react-router-dom";
 import {handleErrors} from "../../../../utils/handleErrors";
 import {Button} from "../../../common/Button/Button";
 import {StatusResponse} from "../../../feature/StatusResponse/StatusResponse";
 import {LoadingView} from "../../LoadingView/LoadingView";
+import {InputField} from "../../../common/InputField/InputField";
 
 export const LoginView = () => {
     const [status, setStatus] = useState<number>(0);
@@ -44,29 +44,14 @@ export const LoginView = () => {
     }
     return (<>
         {loading ? <LoadingView/> :
-            <form id="login" className="form-login" onSubmit={sendForm}>
-                <h3 className="h3-login">Formularz logowania</h3>
-                <label>Login:</label>
-                <input
-                    type="text"
-                    name="login"
-                    value={user.login}
-                    minLength={3}
-                    maxLength={30}
-                    onChange={setUser}
-                    required
-                />
+            <form id="login" className="form" onSubmit={sendForm}>
+                <h4>Formularz logowania</h4>
+                <InputField label="Login:" type="text" name="login" value={user.login} onChange={setUser}
+                            required={true} minLength={3} maxLength={40}/>
+                <InputField label="Hasło:" type="password" name="password" value={user.password} onChange={setUser}
+                            required={true} minLength={3} maxLength={60}/>
                 <label>Hasło:</label>
-                <input
-                    type="password"
-                    name="password"
-                    minLength={8}
-                    maxLength={40}
-                    value={user.password}
-                    onChange={setUser}
-                    required
-                />
-                <Button text="Zaloguj" name="login-btn"/>
+                <Button text="Zaloguj" name="btn"/>
                 <StatusResponse code={status} keyCategory="error"/>
             </form>
         }
