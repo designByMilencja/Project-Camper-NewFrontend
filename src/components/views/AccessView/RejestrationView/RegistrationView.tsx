@@ -1,7 +1,6 @@
 import React, {SyntheticEvent, useState} from "react";
 import {apiUrl} from "../../../../config/api";
 import {RegistrationEntity} from "types";
-import "../../AddView/AddView.scss";
 import {useNavigate} from "react-router-dom";
 import {useForm} from "../../../../hooks/useForm";
 import {Button} from "../../../common/Button/Button";
@@ -45,20 +44,27 @@ export const RegistrationView = () => {
         }
     }
 
-    return <div className="register">
-        {loading ? <LoadingView/> :
-            <form className="registration-form" onSubmit={sendForm}>
-                <h3 className="h3-register">Formularz rejestracji</h3>
-                <InputField label='Imię:' type="text" name="name" value={user.name} minLength={3} maxLength={50}
-                            onChange={setUser} required/>
-                <InputField label="Email:" type="email" name="email" value={user.email} minLength={5} maxLength={50}
-                            onChange={setUser} required/>
-                <InputField label="Login:" type="text" name="login" value={user.login} minLength={5} maxLength={40}
-                            onChange={setUser} required/>
-                <InputField label="Hasło:" type="password" name="password" value={user.password} minLength={8}
-                            maxLength={40} onChange={setUser} required/>
-                <Button text="Zarejestruj" name="register-btn"/>
-                <StatusResponse code={status} keyCategory="registration"/>
-            </form>}
-    </div>
+    return (
+        <>
+            <h3>Zarejestruj się, aby móc ewidencjonowac swoje wydatki 💰</h3>
+            <div className="form-box">
+                {loading ? <LoadingView/> :
+                    <form className="form" onSubmit={sendForm}>
+                        <h4>Formularz rejestracji</h4>
+                        <InputField label='Imię:' type="text" name="name" value={user.name} minLength={3} maxLength={50}
+                                    onChange={setUser} required/>
+                        <InputField label="Email:" type="email" name="email" value={user.email} minLength={5}
+                                    maxLength={50}
+                                    onChange={setUser} required/>
+                        <InputField label="Login:" type="text" name="login" value={user.login} minLength={5}
+                                    maxLength={40}
+                                    onChange={setUser} required/>
+                        <InputField label="Hasło:" type="password" name="password" value={user.password} minLength={8}
+                                    maxLength={40} onChange={setUser} required/>
+                        <Button text="Zarejestruj" name="btn"/>
+                        <StatusResponse code={status} keyCategory="registration"/>
+                    </form>}
+            </div>
+        </>
+        )
 }
