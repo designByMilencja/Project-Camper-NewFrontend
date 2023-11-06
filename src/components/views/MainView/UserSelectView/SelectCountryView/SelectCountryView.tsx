@@ -15,16 +15,17 @@ export const SelectCountryView = () => {
     const sendForm = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     }
-    const urlCountry = `/country/${country}`;
+    const urlCountry =`/country/${country}`;
     if (isLoadingCountriesData) return <LoadingView/>
     return <>
-        <form onSubmit={sendForm} className="select-form">
-            <select className="country" name="country" onChange={changeCountry} value={country}>
-                <option value=""> - kraj -</option>
+        <form onSubmit={sendForm} className="form">
+            <h3>Wybierz kraj</h3>
+            <select name="country" onChange={changeCountry} value={country}>
+                <option value=""></option>
                 {countriesData ? countriesData.map((country: CountryEntity) => <option key={country.id}
                                                                                        value={country.name}>{country.name}</option>) : []}
             </select>
-            <Button text="sprawdź" to={urlCountry} name="select"></Button>
+            <Button text="Sprawdź" to={urlCountry} name="btn"></Button>
         </form>
     </>;
 }
