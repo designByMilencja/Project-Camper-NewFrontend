@@ -1,5 +1,4 @@
 import React from "react";
-import "./Sum.scss";
 import {apiUrl} from "../../../config/api";
 import {useFetchAndLoading} from "../../../hooks/useFetchAndLoading";
 
