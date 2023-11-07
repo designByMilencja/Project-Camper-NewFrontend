@@ -20,32 +20,32 @@ interface StatusMessage {
 }
 
 export const StatusResponse = ({code, keyCategory}: Props) => {
-    const serverError = 'Przepraszamy wystąpił błąd, spróbuj ponownie później';
+    const serverError = 'Przepraszamy wystąpił błąd, spróbuj ponownie później!';
     const statusMessages: StatusMessage[] = [
         {
             code: Status.Success,
             message: {
-                category: 'Kategoria została dodana pomyślnie',
-                country: 'Kraj został dodany pomyślnie',
-                payment: 'Wydatek został dodany pomyślnie',
+                category: 'Kategoria została dodana pomyślnie!',
+                country: 'Kraj został dodany pomyślnie!',
+                payment: 'Wydatek został dodany pomyślnie!',
             },
         },
         {
             code: Status.BadRequest,
             message: {
-                category: 'Podana kategoria jest już dodana, przejdź do dodawania wydatku',
-                country: 'Podany kraj jest już dodany, przejdź do dodawania wydatku',
-                payment: 'Błąd podczas dodawania wydatku, sprawdź poprawność danych w formularzu',
-                registration: 'Odmowa rejestracji, sprawdź poprawność danych w formularzu'
+                category: 'Podana kategoria jest już dodana, przejdź do dodawania wydatku!',
+                country: 'Podany kraj jest już dodany, przejdź do dodawania wydatku!',
+                payment: 'Błąd podczas dodawania wydatku, sprawdź poprawność danych w formularzu!',
+                registration: 'Odmowa rejestracji, sprawdź poprawność danych w formularzu!'
             }
         },
         {
             code: Status.Unauthorized,
             message: {
-                category: 'Jeśli chcesz dodać kategorię musisz się zalogować',
-                country: 'Jeśli chcesz dodać kraj musisz się zalogować',
-                payment: 'Jeśli chcesz dodać wydatek musisz się zalogować',
-                error: 'Nieprawidłowy login lub hasło'
+                category: 'Jeśli chcesz dodać kategorię musisz się zalogować!',
+                country: 'Jeśli chcesz dodać kraj musisz się zalogować!',
+                payment: 'Jeśli chcesz dodać wydatek musisz się zalogować!',
+                error: 'Nieprawidłowy login lub hasło!'
             }
         }, {
             code: Status.ServerError,
