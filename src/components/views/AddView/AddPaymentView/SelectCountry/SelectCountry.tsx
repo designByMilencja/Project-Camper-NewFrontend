@@ -16,7 +16,7 @@ export const SelectCountry = ({ form, countriesData, saveForm }: Props) => {
             value={form.idCountry}
             onChange={e => saveForm('idCountry', e.target.value)}
             required>
-            <option>--</option>
+            <option></option>
             {countriesData?.map((country: CountryEntity) => (
                 <option key={country.name} value={country.id}>
                     {country.name}
