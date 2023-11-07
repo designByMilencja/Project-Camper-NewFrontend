@@ -83,6 +83,11 @@ body {
         color: $light-color;
         padding: 2rem;
         line-height: 2.5rem;
+        text-align: center;
+      }
+
+      .load {
+        text-align: center;
       }
     }
 
@@ -128,15 +133,8 @@ body {
           margin: 2rem 0;
           text-align: center;
           box-shadow: 0 0 0 2px #5C647F;
-          cursor: pointer;
-        }
-
-        .btn:hover {
-          background-color: $hover-color;
         }
       }
     }
-
   }
-
 }

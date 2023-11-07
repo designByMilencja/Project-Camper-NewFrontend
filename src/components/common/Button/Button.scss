@@ -7,8 +7,11 @@ button, a {
   color: $light-color;
   border-radius: 12px;
   padding: 1rem 2rem;
-  //border: 1px solid black;
   box-shadow: 0 0 0 2px white;
+  cursor: pointer;
+}
+button:hover, a:hover {
+  background-color: $hover-color;
 }
 
 

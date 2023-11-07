@@ -1,0 +1,84 @@
+@import "../../../styles/colors";
+
+footer {
+  text-align: center;
+  font-size: 1.4rem;
+
+  .contact-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    border-radius: 12px;
+    background-color: $main-color;
+    color: $light-color;
+
+    .desc {
+      padding: 2rem;
+      max-width: 700px;
+
+      .desc-title {
+        line-height: 2.5rem;
+        color: $light-color;
+      }
+    }
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .link-box {
+      list-style: none;
+
+      li {
+        padding: .1rem;
+        margin: 3rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+
+        a {
+          box-shadow: 0 0 0 2px #5C647F;
+          font-size: 1.4rem;
+        }
+
+        a:hover {
+          background-color: $hover-color;
+        }
+      }
+    }
+
+    .logo-box {
+      padding: 1rem;
+
+      .logo {
+        border-radius: 12px;
+        width: 200px;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: $main-color;
+    margin-top: 30px;
+    padding: 2rem 1rem;
+    color: $light-color;
+    line-height: 2.5rem;
+
+    .brand {
+      background-color: transparent;
+      text-transform: none;
+      margin: 1rem;
+    }
+
+    .brand:hover {
+      background-color: $hover-color;
+    }
+  }
+}

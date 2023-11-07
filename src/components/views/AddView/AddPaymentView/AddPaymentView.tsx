@@ -75,10 +75,10 @@ export const AddPaymentView = () => {
                                 required/>
                     <SelectCurrencyFromDatabase form={form} noDoubleCurrencies={noDoubleCurrencies}
                                                 saveForm={saveForm}/>
-                    {form.boughtAt !== '' && chosenDate > todayDate ?
-                        <ErrorMessage message="Data płatności nie może być z przyszłości"/> : null}
                     <InputField label="Data zakupu" type="date" name="date" value={form.boughtAt}
                                 onChange={e => saveForm('boughtAt', e.target.value)} required/>
+                    {form.boughtAt !== '' && chosenDate > todayDate ?
+                        <ErrorMessage message="Data płatności nie może być z przyszłości"/> : null}
                     <SelectCountry form={form} countriesData={countriesData} saveForm={saveForm}/>
                     <SelectCategory form={form} categoriesData={categoriesData} saveForm={saveForm}/>
                     <Button text="Dodaj" name="btn"/>

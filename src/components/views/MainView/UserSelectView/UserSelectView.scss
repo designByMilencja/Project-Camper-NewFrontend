@@ -1,35 +1,9 @@
-@import "../../../../styles/colors";
-
 .select-box {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 3rem 0;
-  .select-form {
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-
-    .select {
-      box-shadow: 0 1px 0 2px $light-color;
-    }
-    .select:hover {
-      background-color: $border-color;
-    }
-  }
-}
-
-.month, .country {
-  padding: 1rem 1.5rem;
-  margin: 3rem;
-  width: 30vh;
-  border-radius: 12px;
-  background-color: aliceblue;
-  text-align: center;
-  text-transform: uppercase;
+  gap: 3rem;
+  padding: 3rem;
 }
 

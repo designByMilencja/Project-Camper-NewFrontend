@@ -1,0 +1,29 @@
+@import "../../../styles/colors";
+
+.error-box {
+  padding: 2rem;
+  margin: 3rem 0;
+  background-color: $main-color;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .error-img {
+    background-image: url("../../../img/error.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50vw;
+    height: 50vw;
+    margin: 1rem auto 2rem;
+    border-radius: 50%;
+  }
+
+  .btn {
+    margin-bottom: 3rem;
+  }
+  .btn:hover {
+    background-color: $hover-color;  }
+}
