@@ -21,12 +21,13 @@ export const MonthView = () => {
     return (<>
             {month && allowMonths.includes(month.toUpperCase()) ?
                 <>
-                    <h3>Wydatki 2023 💰Miesiąc: {month.toUpperCase()}</h3>
+                    <h3>Wydatki 2023 💰 Miesiąc: {month.toUpperCase()}</h3>
                     <div className="table">
                         <MonthSumTableView categoriesData={categoriesData} chosenMonth={chosenMonth}/>
                         <SumAllCategoryInMonth month={chosenMonth}/>
                         <Line/>
                     </div>
+                    <h3>Przelicz kwotę w PLN na EUR lub USD 💰</h3>
                     <ConverterView/>
                 </>
                 :

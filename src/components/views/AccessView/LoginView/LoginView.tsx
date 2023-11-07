@@ -44,7 +44,7 @@ export const LoginView = () => {
     }
     return (<>
         {loading ? <LoadingView/> :
-            <form id="login" className="form" onSubmit={sendForm}>
+            <form className="form" onSubmit={sendForm}>
                 <h4>Formularz logowania</h4>
                 <InputField label="Login:" type="text" name="login" value={user.login} onChange={setUser}
                             required={true} minLength={3} maxLength={40}/>

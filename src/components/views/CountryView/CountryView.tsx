@@ -28,6 +28,7 @@ export const CountryView = () => {
                     <SumAllCategoryInCountry idCountry={chosenCountry}/>
                     <Line/>
                 </div>
+                <h3>Przelicz kwotę w PLN na EUR lub USD 💰</h3>
                 <ConverterView/>
             </>
             :
