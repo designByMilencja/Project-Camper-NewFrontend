@@ -1,0 +1,17 @@
+@import "../../../styles/colors";
+
+button, a {
+  text-decoration: none;
+  letter-spacing: .2rem;
+  background-color: $main-color;
+  color: $light-color;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 0 2px white;
+  cursor: pointer;
+}
+button:hover, a:hover {
+  background-color: $hover-color;
+}
+
+

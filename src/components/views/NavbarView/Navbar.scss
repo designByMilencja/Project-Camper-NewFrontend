@@ -1,7 +1,7 @@
 @import "../../../styles/colors";
 
 nav {
-  padding: 1rem 4rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,7 +9,11 @@ nav {
     padding: 0;
     background-color: transparent;
   }
+  .menu {
+    box-shadow: 0 0 0 2px #5C647F;
+  }
+
   .menu:hover {
-    border: 3px solid $border-color;
+    background-color: $hover-color;
   }
 }

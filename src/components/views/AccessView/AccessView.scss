@@ -1,0 +1,15 @@
+@import "../../../styles/colors";
+
+.form-box {
+  .signin-btn {
+    margin: 1rem 0 4rem;
+  }
+  .signin-btn:hover {
+    background-color: $hover-color;
+  }
+  .ask {
+    margin-top: 1rem;
+    padding: 2rem;
+    color: $light-color;
+  }
+}

@@ -1,0 +1,37 @@
+import React from "react";
+import {MonthEntity, CategoryEntity} from 'types';
+import {useFetchAndLoading} from "../../../hooks/useFetchAndLoading";
+import {useParams} from "react-router-dom";
+import {SumAllCategoryInMonth} from "../../feature/Sum/SumAllCategoryInMonth";
+import {MonthSumTableView} from "./MonthSumTableView";
+import {ConverterView} from "../../feature/Converter/Converter";
+import {Line} from "../../common/Line/Line";
+import {ErrorView} from "../ErrorView/ErrorView";
+import {LoadingView} from "../LoadingView/LoadingView";
+import {apiUrl} from "../../../config/api";
+
+export const MonthView = () => {
+    const {month} = useParams();
+    const [categoriesData, isLoadingCategories] = useFetchAndLoading<CategoryEntity[] | null, boolean>(`${apiUrl}/category`);
+    const [monthsData, isLoadingMonths] = useFetchAndLoading<MonthEntity[] | null, boolean>(`${apiUrl}/month`);
+    const allowMonths = monthsData?.map((month: MonthEntity) => month.name) ?? [];
+    const chosenMonth = monthsData?.find((chosenMonth: MonthEntity) => chosenMonth.name === month)?.number;
+
+    if (isLoadingCategories || isLoadingMonths) return <LoadingView/>
+    return (<>
+            {month && allowMonths.includes(month.toUpperCase()) ?
+                <>
+                    <h3>Wydatki 2023 💰 Miesiąc: {month.toUpperCase()}</h3>
+                    <div className="table">
+                        <MonthSumTableView categoriesData={categoriesData} chosenMonth={chosenMonth}/>
+                        <SumAllCategoryInMonth month={chosenMonth}/>
+                        <Line/>
+                    </div>
+                    <h3>Przelicz kwotę w PLN na EUR lub USD 💰</h3>
+                    <ConverterView/>
+                </>
+                :
+                <ErrorView text="Wprowadź poprawną nazwę miesiąca, aby sprawdzić wydatki"/>}
+        </>
+    );
+};
